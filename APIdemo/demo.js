@@ -13,7 +13,8 @@ function api() {
         delete results["date_range"];
         document.getElementById("result").innerHTML = "";
         for(i in results) {
-            document.getElementById("result").innerHTML += "<b>" + i + ":</b>  <i>" + results[i] + "</i><br><br>";
+            fixedi = i.replaceAll("_", " ");
+            document.getElementById("result").innerHTML += "<b>" + fixedi + ":</b>  <i>" + results[i] + "</i><br><br>";
         }
         
     });
