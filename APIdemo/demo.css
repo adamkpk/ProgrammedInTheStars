@@ -18,8 +18,8 @@ body {
     margin-right: auto;
     position: fixed;
     bottom: 3%;   
-    left: 37%;
-    right: 37%;
+    left: 40%;
+    right: 40%;
     background-color: navy;
     text-align: center; 
     padding: 10px;
@@ -41,4 +41,12 @@ body {
 
 #get:hover {
     background-color: mediumslateblue;
+}
+
+#yoursign {
+    text-align: left;
+    color:black;
+    position: fixed;
+    bottom: 3%;   
+    right: 10%;
 }

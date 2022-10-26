@@ -1,5 +1,7 @@
 function api() {
-    const URL = 'https://aztro.sameerkumar.website/?sign=aries&day=today';
+    var sign = document.getElementById("sign").value.toLowerCase();
+    console.log(sign);
+    const URL = `https://aztro.sameerkumar.website/?sign=${sign}&day=today`;
     fetch(URL, {
         method: 'POST'
     })
@@ -9,7 +11,7 @@ function api() {
         console.log(results);
 
         delete results["date_range"];
-
+        document.getElementById("result").innerHTML = "";
         for(i in results) {
             document.getElementById("result").innerHTML += "<b>" + i + ":</b>  <i>" + results[i] + "</i><br><br>";
         }
