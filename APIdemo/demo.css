@@ -12,6 +12,9 @@ body {
     background-color: navy;
     color: white;
 }
+
+input, label {display: block;}
+
 #get {
     display: block;
     margin-left: auto;
