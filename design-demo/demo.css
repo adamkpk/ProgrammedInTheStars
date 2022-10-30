@@ -87,11 +87,11 @@ input, label {
 
 [class*="column"] { 
     overflow: auto;
-    width: 100%;
+    width: 96%;
     display:inline-block;
     height:80vh;
     padding: 15px;
-    margin-top: 10px;
+    margin-top: 20px;
     border-radius: 10px;
     /*background-color: rgb(247, 232, 248);*/
     background-color: white;
@@ -99,8 +99,8 @@ input, label {
     
  }
 
-@media screen and (min-width:700px) {
+@media screen and (min-width:800px) {
     [class*="column"] {
-      width:46%;
+      width:48%;
     }
 }
