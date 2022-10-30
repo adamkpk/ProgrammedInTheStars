@@ -7,13 +7,14 @@
     <script src="demo.js"></script>
     </head>
     <body>
-        <div class="header">
+        <header>
             <img src="logoconcept2.png">
             <span id="about">about | refresh</span>
-        </div>
+        </header>
+        <div id="break"></div>
         
         <div id="yoursign">
-            <label for="sign" style="color:white">Your sign: &#10024;</label>
+            <label for="sign">Your sign: &#10024;</label>
             <select name="sign" id="sign">
                 <option value="aries">Aries</option>
                 <option value="taurus">Taurus</option>
@@ -30,7 +31,13 @@
               </select>
         </div>
 
-        <div id="result"></div>
         <div id="get" onclick="api()">Submit</div>
+
+        <div class="column">
+            
+        </div>
+        <div class="column">
+            <div id="result"></div>
+        </div>
     </body>
 </html>

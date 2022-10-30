@@ -1,9 +1,15 @@
+*{
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif
+}
+
+
 body {
     background-color: white;
     text-align: center;   
-    font-family: Arial, Helvetica, sans-serif
-}
-.header {
+} 
+
+header {
     width: 100%;
     left: 0%;
     right: 0%;
@@ -14,7 +20,13 @@ body {
     color: white;
 }
 
-input, label {display: block;}
+#break {
+    padding-bottom: 50px;
+}
+
+input, label {
+    display: block;
+}
 
 #about {
     text-align: right;
@@ -29,7 +41,7 @@ input, label {display: block;}
     margin-left: auto;
     margin-right: auto;
     position: fixed;
-    bottom: 3%;   
+    bottom: 30%;   
     left: 40%;
     right: 40%;
     max-width: 200px;
@@ -42,23 +54,38 @@ input, label {display: block;}
     font-weight: bold;
 }
 
-#result {
-    text-align: left;
-    color:black;
-    display: block;
-    margin-left: 3%;
-    margin-right: 3%;
-    position: fixed;
-    top: 30%;
-}
-
 #get:hover {
     background-color: rgb(163, 89, 153);
 }
 
 #yoursign {
+    font-size: large;
     text-align: center;
     color: black;
     position: fixed;
+    left: 50%;
+    top: 30%;
+    transform: translate(-50%, -70%);
     margin: auto;
+}
+
+
+[class*="column"] { 
+    overflow: auto;
+    width: 100%;
+    display:inline-block;
+    height:80vh;
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 10px;
+    /*background-color: rgb(247, 232, 248);*/
+    background-color: white;
+    color:black;
+    
+ }
+
+@media screen and (min-width:700px) {
+    [class*="column"] {
+      width:46%;
+    }
 }

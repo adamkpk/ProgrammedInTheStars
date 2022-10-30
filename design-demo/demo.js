@@ -16,6 +16,16 @@ function api() {
             fixedi = i.replaceAll("_", " ");
             document.getElementById("result").innerHTML += "<b>" + fixedi + ":</b>  <i>" + results[i] + "</i><br><br>";
         }
+
+        document.getElementById("yoursign").style.display = "none";
+        document.getElementById("get").style.display = "none";
+
+        let columns = document.getElementsByClassName("column");
+
+        for (let i = 0; i < columns.length; i++) {
+            columns[i].style.backgroundColor = "rgb(247, 232, 248)";
+          }
+
         
     });
     
