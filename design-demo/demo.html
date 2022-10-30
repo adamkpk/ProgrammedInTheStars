@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset="UTF-8">
+    <title>1012 project APIDemo</title>
+    <link href="demo.css" rel="stylesheet">
+    <script src="demo.js"></script>
+    </head>
+    <body>
+        <div class="header">
+            <img src="logoconcept2.png">
+            <span id="about">about | refresh</span>
+        </div>
+        
+        <div id="yoursign">
+            <label for="sign" style="color:white">Your sign: &#10024;</label>
+            <select name="sign" id="sign">
+                <option value="aries">Aries</option>
+                <option value="taurus">Taurus</option>
+                <option value="gemini">Gemini</option>
+                <option value="cancer">Cancer</option>
+                <option value="leo">Leo</option>
+                <option value="virgo">Virgo</option>
+                <option value="libra">Libra</option>
+                <option value="scorpio">Scorpio</option>
+                <option value="sagittarius">Sagittarius</option>
+                <option value="capricorn">Capricorn</option>
+                <option value="aquarius">Aquarius</option>
+                <option value="pisces">Pisces</option>
+              </select>
+        </div>
+
+        <div id="result"></div>
+        <div id="get" onclick="api()">Submit</div>
+    </body>
+</html>
