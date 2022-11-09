@@ -1,0 +1,31 @@
+ReadMe 
+
+EECS Project 2022
+
+Team mates- Kunjal Arora (Section B, Lab 03)(arorak26@my.yorku.ca), Payton Moore (Section B, Lab 02)(payton79@my.yorku.ca), Ismail Adam Knapik (Section B, Lab 03)(ik1346@my.yorku.ca), Rodney Josephs (Section B, Lab 02)(rodney07@my.yorku.ca).
+
+Welcome to the reading guide to "Programmed in the Stars"
+
+How to use-
+
+1. The user enters data
+user can choose what kind of data he/she wants to enter:- 
+   a can enter data using calender 
+   b can enter using sun-sign 
+The "Enter your birthday instead" button helps you change the input format
+
+2. A dropdown menu on the left corner of the screen consists of
+   a "about" which conveys information about the postconditions of the program.
+   b "refresh" which clears the entered values and goes back to the data input page. 
+If you want to enter data after refreshing read point 1 again.
+
+3. Click the submit button to retreive data/ for output. 
+If not option or date from the calender selected, an alert will pop up. 
+click the "ok" button to continue entering data. For entering data, read point 1. 
+
+4. If the you want The API to retrieve your daily horoscope, click on "Get your daily horoscope".
+To go back to the home page or to enter new data, read point 2.
+
+
+
+
