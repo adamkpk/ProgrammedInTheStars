@@ -28,13 +28,17 @@ input, label {
     display: block;
 }
 
-#about {
+#menu {
+    float: left;
+}
+
+/* #about {
     text-align: right;
     position: fixed;
     right: 0%;
     padding-right: 1%;
     padding-top: 1%;
-}
+} */
 
 #get {
     display: block;
@@ -69,7 +73,7 @@ input, label {
     font-weight: bold;
 }
 
-#get:hover, #getapi:hover {
+#get:hover, #getapi:hover, #menu:hover {
     background-color: rgb(163, 89, 153);
 }
 
