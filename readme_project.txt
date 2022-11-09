@@ -6,8 +6,6 @@ Team mates- Kunjal Arora (Section B, Lab 03)(arorak26@my.yorku.ca), Payton Moore
 
 Welcome to the reading guide to "Programmed in the Stars"
 
-How to use-
-
 1. The user enters data
 user can choose what kind of data he/she wants to enter:- 
    a can enter data using calender 
@@ -15,7 +13,7 @@ user can choose what kind of data he/she wants to enter:-
 The "Enter your birthday instead" button helps you change the sun-sign menu to calender format.
 The "Select your sun-sign instead" button helps you change the calender to the sun-sign menu.
 
-2. A dropdown menu on the left corner of the screen consists of
+2. A dropdown menu(main menu) on the left corner of the screen consists of
    a "about" which conveys information about the postconditions of the program.
    b "refresh" which clears the entered values and goes back to the data input page. 
 If you want to enter data after refreshing read point 1 again.
