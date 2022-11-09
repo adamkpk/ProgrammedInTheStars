@@ -12,7 +12,8 @@ How to use-
 user can choose what kind of data he/she wants to enter:- 
    a can enter data using calender 
    b can enter using sun-sign 
-The "Enter your birthday instead" button helps you change the input format
+The "Enter your birthday instead" button helps you change the sun-sign menu to calender format.
+The "Select your sun-sign instead" button helps you change the calender to the sun-sign menu.
 
 2. A dropdown menu on the left corner of the screen consists of
    a "about" which conveys information about the postconditions of the program.
@@ -26,6 +27,11 @@ click the "ok" button to continue entering data. For entering data, read point 1
 4. If the you want The API to retrieve your daily horoscope, click on "Get your daily horoscope".
 To go back to the home page or to enter new data, read point 2.
 
+
+Features :-
+1. The main menu(consisting the "about and "refresh") is available for the user in all the pages/steps
+2. The "submit", "Enter using birth-date", "Enter using sun-sign", "ok" and "Get your daily horoscope" buttons change color when hovered upon.
+3. The columns consisting the daily horoscope and the sun-sign information resize according to the windown size (responsive design).
 
 
 
