@@ -43,9 +43,13 @@ function chngMode(mode) {
         document.getElementById("bdayoption").style.display = "none";
         document.getElementById("signoption").style.display = "inline";
         document.getElementById("chnglabel").innerHTML = "Recalled your sign? &#9803;";
+        document.getElementById("yoursign").style.display = "none";
+        document.getElementById("yourbday").style.display = "block";
     } else if(mode == 'sign') {
         document.getElementById("signoption").style.display = "none";
         document.getElementById("bdayoption").style.display = "inline";
         document.getElementById("chnglabel").innerHTML = "Don't know your sign? &#127874;";
+        document.getElementById("yoursign").style.display = "block";
+        document.getElementById("yourbday").style.display = "none";
     }
 }

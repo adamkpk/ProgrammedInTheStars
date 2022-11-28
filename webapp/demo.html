@@ -38,6 +38,40 @@
               </select>
         </div>
 
+        <div id="yourbday">
+            <label for="month">Month: &#127769;</label>
+            <select name="month" id="month">
+                <option value="0">January</option>
+                <option value="1">February</option>
+                <option value="2">March</option>
+                <option value="3">April</option>
+                <option value="4">May</option>
+                <option value="5">June</option>
+                <option value="6">July</option>
+                <option value="7">August</option>
+                <option value="8">September</option>
+                <option value="9">October</option>
+                <option value="10">November</option>
+                <option value="11">December</option>
+            </select>
+            <label for="day">Day: &#127774;</label>
+            <select name="day" id="day" disabled>
+                <!--<option value="0">January</option>
+                <option value="1">February</option>
+                <option value="2">March</option>
+                <option value="3">April</option>
+                <option value="4">May</option>
+                <option value="5">June</option>
+                <option value="6">July</option>
+                <option value="7">August</option>
+                <option value="8">September</option>
+                <option value="9">October</option>
+                <option value="10">November</option>
+                <option value="11">December</option>-->
+            </select>
+            <p id="disclaimer">(select month first)</p>
+        </div>
+
         <div id ="changesubmitmode">
             <label for="bdayoption" id="chnglabel">Don't know your sign? &#127874;</label>
             <button name="bdayoption" id="bdayoption" onclick="chngMode('bday')">Enter my birthday instead</button>

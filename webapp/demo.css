@@ -28,6 +28,10 @@ input, label {
     display: block;
 }
 
+label {
+    margin-top: 4px;
+}
+
 .dropbtn {
     float: left;
 }
@@ -86,6 +90,24 @@ input, label {
     top: 30%;
     transform: translate(-50%, -70%);
     margin: auto;
+}
+
+#yourbday {
+    display: none;
+    font-size: large;
+    text-align: center;
+    color: black;
+    position: fixed;
+    left: 50%;
+    top: 34%;
+    transform: translate(-50%, -66%);
+    margin: auto;
+}
+
+#disclaimer {
+    font-size: 65%;
+    margin-top: 0px;
+    color: rgb(153, 153, 153)
 }
 
 .dropdown-content {
