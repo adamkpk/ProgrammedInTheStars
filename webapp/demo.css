@@ -73,7 +73,7 @@ input, label {
     font-weight: bold;
 }
 
-#get:hover, #getapi:hover, .dropbtn:hover {
+#get:hover, #getapi:hover, .dropbtn:hover, button:hover {
     background-color: rgb(163, 89, 153);
 }
 
@@ -119,6 +119,7 @@ input, label {
   }
 
 #about {
+    color: rgb(106, 106, 106);
     display: block;
     background-color: rgb(247, 232, 248);
     padding:15px;
@@ -139,6 +140,33 @@ input, label {
 
 #returnhome a:hover {
     background-color: rgb(163, 89, 153);
+}
+
+#changesubmitmode {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    position: fixed;
+    top:40%;
+    bottom: 50%;   
+    left: 10%;
+    right: 70%;
+    max-width: 200px; 
+}
+
+button {
+    max-width: 200px;
+    background-color: rgb(146, 13, 135);
+    text-align: center; 
+    padding: 11px;
+    border: 5px;
+    border-radius: 4px;
+    color: white;
+    font-weight: bold;
+}
+
+#signoption {
+    display: none;
 }
 
 [class*="column"] { 

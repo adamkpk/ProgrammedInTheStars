@@ -35,5 +35,17 @@ function api() {
             document.getElementById("apidata").innerHTML += "<b>" + fixedi + ":</b>  <i>" + results[i] + "</i><br><br>";
         }   
     });
-    
+
+}
+
+function chngMode(mode) {
+    if(mode == 'bday') {
+        document.getElementById("bdayoption").style.display = "none";
+        document.getElementById("signoption").style.display = "inline";
+        document.getElementById("chnglabel").innerHTML = "Recalled your sign? &#9803;";
+    } else if(mode == 'sign') {
+        document.getElementById("signoption").style.display = "none";
+        document.getElementById("bdayoption").style.display = "inline";
+        document.getElementById("chnglabel").innerHTML = "Don't know your sign? &#127874;";
+    }
 }
