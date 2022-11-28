@@ -2,18 +2,24 @@
 <html>
     <head>
     <meta charset="UTF-8">
-    <title>Astrologer (design demo)</title>
+    <title>Astrologer</title>
     <link href="demo.css" rel="stylesheet">
     <script src="demo.js"></script>
     </head>
     <body>
         <header>
-            <span id="menu"><input type="image" src="menu.png"></span>
+            <div class="dropdown">
+            <span class="dropbtn"><input type="image" src="menu.png"></span>
+            <div class="dropdown-content">
+                <a href="about.html">about</a>
+                <a href="demo.html">refresh</a>
+            </div>
+            </div>
             <img src="logoconcept2.png">
             <!-- <span id="about">about | refresh</span> -->
         </header>
         <div id="break"></div> <!-- adds line break for layout, ignore -->
-        
+
         <div id="yoursign">
             <label for="sign">Your sign: &#10024;</label>
             <select name="sign" id="sign">
