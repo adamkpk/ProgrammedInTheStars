@@ -5,6 +5,8 @@ function data() {
     console.log(sign);
 
     document.getElementById("yoursign").style.display = "none";
+    document.getElementById("yourbday").style.display = "none";
+    document.getElementById("changesubmitmode").style.display = "none";
     document.getElementById("get").style.display = "none";
 
     let columns = document.getElementsByClassName("column");
