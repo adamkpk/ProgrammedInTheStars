@@ -1,7 +1,6 @@
 var sign;
 
 function data() {
-    var sign;
     if(document.getElementById("yoursign").style.display != "none") {
         sign = document.getElementById("sign").value.toLowerCase();
         if(sign == "select"){
