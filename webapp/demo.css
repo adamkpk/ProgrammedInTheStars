@@ -49,7 +49,7 @@ label {
     margin-left: auto;
     margin-right: auto;
     position: fixed;
-    bottom: 30%;   
+    bottom: 28%;   
     left: 40%;
     right: 40%;
     max-width: 200px;
@@ -87,8 +87,8 @@ label {
     color: black;
     position: fixed;
     left: 50%;
-    top: 30%;
-    transform: translate(-50%, -70%);
+    top: 32%;
+    transform: translate(-50%, -68%);
     margin: auto;
 }
 
@@ -99,15 +99,9 @@ label {
     color: black;
     position: fixed;
     left: 50%;
-    top: 34%;
-    transform: translate(-50%, -66%);
+    top: 37%;
+    transform: translate(-50%, -63%);
     margin: auto;
-}
-
-#disclaimer {
-    font-size: 65%;
-    margin-top: 0px;
-    color: rgb(153, 153, 153)
 }
 
 .dropdown-content {
