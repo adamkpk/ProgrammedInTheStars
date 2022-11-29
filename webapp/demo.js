@@ -14,7 +14,7 @@ function data() {
 
         let month = parseInt(document.getElementById("month").value);
         let day = parseInt(document.getElementById("day").value);
-        if(month == "select"|| day == "select"){
+        if(!month || !day){
             alert("Please select your birth month and day before submitting!");
             return;
         } else if(day > validDaysPerMonth[month]){
