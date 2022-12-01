@@ -2,7 +2,6 @@ var sign;
 var url = "http://localhost:8080/"; //server URL
 
 /* parses user input for sign, queries server for data */
-/* TODO: move data to server */
 function data() {
     if(document.getElementById("yoursign").style.display != "none") { // if in sign input mode
         sign = document.getElementById("sign").value.toLowerCase();
