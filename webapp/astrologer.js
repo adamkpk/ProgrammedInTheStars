@@ -16,7 +16,7 @@ function data() {
 
         let month = parseInt(document.getElementById("month").value);
         let day = parseInt(document.getElementById("day").value);
-        if(!month || !day){
+        if(isNaN(month) || !day){ //if month or day not selected
             alert("Please select your birth month and day before submitting!");
             return;
         } else if(day > validDaysPerMonth[month]){
