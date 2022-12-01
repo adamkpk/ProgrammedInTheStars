@@ -68,15 +68,12 @@ function response(data, status){
 /* Queries the Aztro API for daily horoscope data */
 function api() {
 
-    const URL = `https://aztro.sameerkumar.website/?sign=${sign}&day=today`;
-    fetch(URL, {
-        method: 'POST'
-    })
-    .then(response => response.json())
-    .then(json => {
-        const results = json;
-        console.log(results);
-
+    /*retrieves data corresponding to user input from the API using POST method via jQuery*/
+    $.post(`https://aztro.sameerkumar.website/?sign=${sign}&day=today`, function apiResponse(data, status) {
+        console.log(status);
+        var results = data;
+        
+        /*formatting returned JSON into presentable HTML*/
         delete results["date_range"];
         document.getElementById("apidata").innerHTML = "" + "<br>";
         for(i in results) {
