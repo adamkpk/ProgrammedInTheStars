@@ -1,26 +1,28 @@
+<!-- Welcome to the Astrologer web app by team ProgrammedInTheStars :) -->
 <!DOCTYPE html>
 <html>
     <head>
     <meta charset="UTF-8">
     <title>Astrologer</title>
-    <link href="demo.css" rel="stylesheet">
+    <link href="astrologer.css" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="demo.js"></script>
+    <script src="astrologer.js"></script>
     </head>
     <body>
+        <!--header bar, contains dropdown nav menu and logo -->
         <header>
             <div class="dropdown">
             <span class="dropbtn"><input type="image" src="menu.png"></span>
             <div class="dropdown-content">
                 <a href="about.html">about</a>
-                <a href="demo.html">refresh</a>
+                <a href="astrologer.html">refresh</a>
             </div>
             </div>
             <img src="logo.png">
-            <!-- <span id="about">about | refresh</span> -->
         </header>
         <div id="break"></div> <!-- adds line break for layout, ignore -->
 
+        <!-- sign dropdown selection interface -->
         <div id="yoursign">
             <label for="sign">Your sign: &#10024;</label>
             <select name="sign" id="sign">
@@ -40,6 +42,7 @@
             </select>
         </div>
 
+        <!-- birthday selection interface (month + day selection)-->
         <div id="yourbday">
             <label for="month">Month: &#127769;</label>
             <select name="month" id="month">
@@ -92,23 +95,27 @@
                 <option value="30">30</option>
                 <option value="31">31</option>
             </select>
-            <!--<input type="date" id="date" name="date">-->
         </div>
 
+        <!-- change user input mode (sign/birthday) -->
         <div id ="changesubmitmode">
             <label for="bdayoption" id="chnglabel">Don't know your sign? &#127874;</label>
             <button name="bdayoption" id="bdayoption" onclick="chngMode('bday')">Enter my birthday instead</button>
             <button name="signoption" id="signoption" onclick="chngMode('sign')">Enter my sign instead</button>
         </div>
 
+        <!-- Input submission button -->
         <div id="get" onclick="data()">Submit</div>
 
+        <!-- data display columns -->
         <div class="column">
             <!-- data from database goes in mydata -->
             <div id="mydata"></div> 
         </div>
         <div class="column">
+            <!-- data from api goes in apidata -->
             <div id="apidata">
+                <br>
                 <div id="getapi" onclick="api()">Get my daily horoscope</div>
             </div>
         </div>

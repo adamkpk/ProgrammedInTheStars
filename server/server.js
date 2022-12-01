@@ -1,68 +1,18 @@
-var sign;
+const express = require('express');
+const app = express();
+const port = 8080;
 
-function data() {
-    if(document.getElementById("yoursign").style.display != "none") {
-        sign = document.getElementById("sign").value.toLowerCase();
-        if(sign == "select"){
-            alert("Please select a sign before submitting!");
-            return;
-        }
-    } else if(document.getElementById("yourbday").style.display != "none") {
-        const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
-        const validDaysPerMonth = [31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+app.use(express.static("public")); 
 
-        let month = parseInt(document.getElementById("month").value);
-        let day = parseInt(document.getElementById("day").value);
-        if(!month || !day){
-            alert("Please select your birth month and day before submitting!");
-            return;
-        } else if(day > validDaysPerMonth[month]){
-            alert(`${months[month]} ${day} is not a valid date!\nPlease select a valid birth date.`);
-            return;
-        }
-
-        // -- Below block of code translates birth day and month into zodiac sign --
-        if((month == 2 && day >= 21) || (month == 3 && day <= 19)) sign = "aries";
-        if((month == 3 && day >= 20) || (month == 4 && day <= 20)) sign = "taurus";
-        if((month == 4 && day >= 21) || (month == 5 && day <= 21)) sign = "gemini";
-        if((month == 5 && day >= 22) || (month == 6 && day <= 22)) sign = "cancer";
-        if((month == 6 && day >= 23) || (month == 7 && day <= 22)) sign = "leo";
-        if((month == 7 && day >= 23) || (month == 8 && day <= 22)) sign = "virgo";
-        if((month == 8 && day >= 23) || (month == 9 && day <= 23)) sign = "libra";
-        if((month == 9 && day >= 24) || (month == 10 && day <= 21)) sign = "scorpio";
-        if((month == 10 && day >= 22) || (month == 11 && day <= 21)) sign = "sagittarius";
-        if((month == 11 && day >= 22) || (month == 0 && day <= 19)) sign = "capricorn";
-        if((month == 0 && day >= 20) || (month == 1 && day <= 18)) sign = "aquarius";
-        if((month == 1 && day >= 19) || (month == 2 && day <= 20)) sign = "pisces";
-    }
-    
-    console.log(sign);
-
-    document.getElementById("yoursign").style.display = "none";
-    document.getElementById("yourbday").style.display = "none";
-    document.getElementById("changesubmitmode").style.display = "none";
-    document.getElementById("get").style.display = "none";
-
-    let columns = document.getElementsByClassName("column");
-
-    for (let i = 0; i < columns.length; i++) {
-        columns[i].style.backgroundColor = "rgb(247, 232, 248)";
-    }
-
-    //document.getElementById("mydata").innerHTML = "<h1>" + sign + "<br><br></h1>" + sign + " database data here";
-    /*$.post(
-        url+'?data='+JSON.stringify({
-            'sign':sign
-        }),
-        response
-    );*/
+app.get("/", function (req, res) {
+    var sign = req.query['sign'];
+    var signData;
 
     switch(sign) {
 
         case "aries":
 
-            document.getElementById("mydata").innerHTML= 
-            "<h1>" + sign.toUpperCase() + "</h1>" + 
+            signData = "<h1>" + sign.toUpperCase() + "</h1>" + 
             "<img src='icons/icons8-aries-96.png' alt='Aries icon'>" +"<br>"+ 
             "<h2>" + "(March 21-April 19)" + "</h2>" + "<span>" + "Aries element: " + "</span>" + "fire" + "<br>" + 
             "<br>" + "<span>" + "Aries symbol: " + "</span>" + "the ram" + "<br>" +
@@ -85,8 +35,7 @@ function data() {
     
         case "taurus":
 
-            document.getElementById("mydata").innerHTML= 
-            "<h1>" + sign.toUpperCase() + "</h1>" +
+            signData = "<h1>" + sign.toUpperCase() + "</h1>" +
             "<img src='icons/icons8-taurus-96.png' alt='Taurus icon'>" +"<br>"+ 
             "<h2>" + "(April 20-May 20)" + "</h2>"+ "<span>" + "Taurus element: " + "</span>" + "earth" + "<br>" +
             "<br>" + "<span>" + "Taurus symbol: " + "</span>" + "the bull" + "<br>" +
@@ -109,8 +58,7 @@ function data() {
     
         case "gemini":
 
-            document.getElementById("mydata").innerHTML= 
-            "<h1>" + sign.toUpperCase() + "</h1>" + 
+            signData = "<h1>" + sign.toUpperCase() + "</h1>" + 
             "<img src='icons/icons8-gemini-96.png' alt='Gemini icon'>" +"<br>"+ 
             "<h2>" + "(May 21-June 20)" + "</h2>" + "<span>" + "Gemini element: " + "</span>" + "air" + "<br>" +
             "<br>" + "<span>" + "Gemini symbol: " + "</span>" + "the twins" + "<br>" +
@@ -134,8 +82,7 @@ function data() {
     
         case "cancer":
 
-            document.getElementById("mydata").innerHTML= 
-            "<h1>" + sign.toUpperCase() + "</h1>" + 
+            signData = "<h1>" + sign.toUpperCase() + "</h1>" + 
             "<img src='icons/icons8-cancer-96.png' alt='Cancer icon'>" +"<br>"+
             "<h2>" + "(June 20-July 22)" + "</h2>" + "<span>" + "Cancer element: " + "</span>" + "water" + "<br>" +
             "<br>" + "<span>" + "Cancer symbol: " + "</span>" + "the crab" + "<br>" +
@@ -156,8 +103,7 @@ function data() {
     
         case "leo":
 
-            document.getElementById("mydata").innerHTML= 
-            "<h1>" + sign.toUpperCase() + "</h1>" + 
+            signData = "<h1>" + sign.toUpperCase() + "</h1>" + 
             "<img src='icons/icons8-leo-96.png' alt='Leo icon'>" +"<br>"+ 
             "<h2>" + "(July 23-August 22)" + "</h2>" + "<span>" + "Leo element: " + "</span>" + "fire" + "<br>" +
             "<br>" + "<span>" + "Leo symbol: " + "</span>" + "the lion" + "<br>" +
@@ -176,8 +122,7 @@ function data() {
     
         case "virgo":
 
-            document.getElementById("mydata").innerHTML= 
-            "<h1>" + sign.toUpperCase() + "</h1>" + 
+            signData = "<h1>" + sign.toUpperCase() + "</h1>" + 
             "<img src='icons/icons8-virgo-96.png' alt='Virgo icon'>" +"<br>"+ 
             "<h2>" + "(August 23-September 22)" + "</h2>" + "<span>" + "Virgo element: " + "</span>" + "earth" + "<br>" +
             "<br>" + "<span>" + "Virgo symbol: " + "</span>" + "the virgin" + "<br>" +
@@ -197,8 +142,7 @@ function data() {
     
         case "libra":
 
-            document.getElementById("mydata").innerHTML= 
-            "<h1>" + sign.toUpperCase() + "</h1>" + 
+            signData = "<h1>" + sign.toUpperCase() + "</h1>" + 
             "<img src='icons/icons8-libra-96.png' alt='Libra icon'>" +"<br>"+ 
             "<h2>" + "(September 23 - October 22)" + "</h2>" + "<span>" + "Libra element: " + "</span>" + "air" + "<br>" +
             "<br>" + "<span>" + "Libra symbol: " + "</span>" + "the scales" + "<br>" +
@@ -217,8 +161,7 @@ function data() {
     
         case "scorpio":
 
-            document.getElementById("mydata").innerHTML= 
-            "<h1>" + sign.toUpperCase() + "</h1>" + 
+            signData = "<h1>" + sign.toUpperCase() + "</h1>" + 
             "<img src='icons/icons8-scorpio-96.png' alt='Scorpio icon'>" +"<br>"+ 
             "<h2>" + "(October 23 - November 21)" + "</h2>" + "<span>" + "Scorpio element: " + "</span>" + "water" + "<br>" +
             "<br>" + "<span>" + "Scorpio symbol: " + "</span>" + "the scorpion" + "<br>" +
@@ -238,8 +181,7 @@ function data() {
     
         case "sagittarius":
 
-            document.getElementById("mydata").innerHTML= 
-            "<h1>" + sign.toUpperCase() + "</h1>" + 
+            signData = "<h1>" + sign.toUpperCase() + "</h1>" + 
             "<img src='icons/icons8-sagittarius-96.png' alt='Sagittarius icon'>" +"<br>"+ 
             "<h2>" + "(November 22 - December 21)" + "</h2>" + "<span>" + "Sagittarius element: " + "</span>" + "fire" + "<br>" + 
             "<br>" + "<span>" + "Sagittarius symbol: " + "</span>" + "the archer" + "<br>" + 
@@ -258,8 +200,7 @@ function data() {
     
         case "capricorn":
 
-            document.getElementById("mydata").innerHTML= 
-            "<h1>" + sign.toUpperCase() + "</h1>" + 
+            signData = "<h1>" + sign.toUpperCase() + "</h1>" + 
             "<img src='icons/icons8-capricorn-96.png' alt='Capricorn icon'>" +"<br>"+ 
             "<h2>" + "(December 22 - January 19)" + "</h2>" + "<span>" + "Capricorn element: " + "</span>" + "earth" + "<br>" + 
             "<br>" + "<span>" + "Capricorn symbol: " + "</span>" + "the goat" + "<br>" + 
@@ -275,8 +216,7 @@ function data() {
     
         case "aquarius":
 
-            document.getElementById("mydata").innerHTML= 
-            "<h1>" + sign.toUpperCase() + "</h1>" + 
+            signData = "<h1>" + sign.toUpperCase() + "</h1>" + 
             "<img src='icons/icons8-aquarius-96.png' alt=' icon'>" +"<br>"+ 
             "<h2>" + "(January 20 - February 18)" + "</h2>" + "<span>" + "Aquarius element: " + "</span>" + "air" + "<br>" +
             "<br>" + "<span>" + "aquarius symbol: " + "</span>" + "the water bearer" + "<br>" + 
@@ -294,8 +234,7 @@ function data() {
     
         case "pisces":
 
-            document.getElementById("mydata").innerHTML= 
-            "<h1>" + sign.toUpperCase() + "</h1>" + 
+            signData = "<h1>" + sign.toUpperCase() + "</h1>" + 
             "<img src='icons/icons8-pisces-96.png' alt='Pisces icon'>" +"<br>"+ 
             "<h2>" + "(February 19 - March 20)" + "</h2>" + "<span>" + "Pisces element: " + "</span>" +  "water" + "<br>" +
             "<br>" + "<span>" + "Pisces symbol: " + "</span>" + "the fish" + "<br>" + 
@@ -312,49 +251,13 @@ function data() {
         break;
     
     }
-
-    document.getElementById("getapi").style.display = "inline";
-    
-}
-
-function response(data, status){
-    var response = JSON.parse(data);
-    console.log(data);
-}
-
-function api() {
-
-    const URL = `https://aztro.sameerkumar.website/?sign=${sign}&day=today`;
-    fetch(URL, {
-        method: 'POST'
-    })
-    .then(response => response.json())
-    .then(json => {
-        const results = json;
-        console.log(results);
-
-        delete results["date_range"];
-        document.getElementById("apidata").innerHTML = "";
-        for(i in results) {
-            fixedi = i.replaceAll("_", " ");
-            document.getElementById("apidata").innerHTML += "<b>" + fixedi + ":</b>  <i>" + results[i] + "</i><br><br>";
-        }   
-    });
-
-}
-
-function chngMode(mode) {
-    if(mode == 'bday') {
-        document.getElementById("bdayoption").style.display = "none";
-        document.getElementById("signoption").style.display = "inline";
-        document.getElementById("chnglabel").innerHTML = "Recalled your sign? &#9803;";
-        document.getElementById("yoursign").style.display = "none";
-        document.getElementById("yourbday").style.display = "block";
-    } else if(mode == 'sign') {
-        document.getElementById("signoption").style.display = "none";
-        document.getElementById("bdayoption").style.display = "inline";
-        document.getElementById("chnglabel").innerHTML = "Don't know your sign? &#127874;";
-        document.getElementById("yoursign").style.display = "block";
-        document.getElementById("yourbday").style.display = "none";
+    res.setHeader("Access-Control-Allow-Origin", "*");
+    if(signData) {
+        console.log(`Successfully retrieved data for ${sign}! Sending to client:`);
     }
-}
+    res.send(signData);
+});
+
+
+app.listen(port, () => console.log(`Server has started on port: ${port}`));
+
