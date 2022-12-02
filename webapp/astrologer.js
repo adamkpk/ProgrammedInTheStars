@@ -57,11 +57,13 @@ function data() {
 
     /* displays interface button for retrieving daily horoscope via API */
     document.getElementById("getapi").style.display = "inline";   
+    return sign;
 }
 
 /* handles server response data */
 function response(data, status){
     document.getElementById("mydata").innerHTML = data;
+    return data;
 }
 
 /* Queries the Aztro API for daily horoscope data */
@@ -76,6 +78,7 @@ function api() {
         delete results["date_range"];
         document.getElementById("apidata").innerHTML = "" + "<br>";
         for(i in results) {
+         
             fixedi = i.replaceAll("_", " ");
             document.getElementById("apidata").innerHTML += "<b>" + fixedi + ":</b>  <i>" + results[i] + "</i><br><br>";
         }   
@@ -91,11 +94,17 @@ function chngMode(mode) {
         document.getElementById("chnglabel").innerHTML = "Recalled your sign? &#9803;";
         document.getElementById("yoursign").style.display = "none";
         document.getElementById("yourbday").style.display = "block";
+        return "mode is bday"
     } else if(mode == 'sign') {
         document.getElementById("signoption").style.display = "none";
         document.getElementById("bdayoption").style.display = "inline";
         document.getElementById("chnglabel").innerHTML = "Don't know your sign? &#127874;";
         document.getElementById("yoursign").style.display = "block";
         document.getElementById("yourbday").style.display = "none";
+        return "mode is sign"
     }
+}
+/* code for testing that the testrunner is working appropriately*/
+function testing(){
+    return "hello"
 }
