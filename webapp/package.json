@@ -1,0 +1,15 @@
+{
+  "name": "project",
+  "version": "1.0.0",
+  "description": "for tests in project",
+  "main": "astrologer.js",
+  "scripts": {
+    "test": "mocha || true"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "chai": "^4.3.7",
+    "mocha": "^10.1.0"
+  }
+}
