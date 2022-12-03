@@ -33,8 +33,6 @@ function getData() {
     /* Sends a GET request to the server including a query string with sign data
         (as demonstrated in Lab 8)*/
     $.get(url + '?sign=' + sign, response);  
-
-    return datalog;
 }
 
 /* handles and displays server response data */
