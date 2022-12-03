@@ -4,7 +4,7 @@ describe("Test 0: testing the working of the testrunner", function(){
     var result = testing();
 
     it("should return 'hello' from the test function in the webapp .js file", function(){
-        assert.equals(result,"hello");
+        assert.equal(result,"hello");
     })
 })
 
