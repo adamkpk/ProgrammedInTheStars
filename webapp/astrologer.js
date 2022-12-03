@@ -112,6 +112,7 @@ function switchInputMode(mode) {
         document.getElementById("yourbday").style.display = "none";
     }
 }
+
 /* code for testing that the testrunner is working appropriately*/
 function testing(){
     return "hello"
