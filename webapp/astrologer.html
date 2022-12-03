@@ -100,12 +100,12 @@
         <!-- change user input mode (sign/birthday) -->
         <div id ="changesubmitmode">
             <label for="bdayoption" id="chnglabel">Don't know your sign? &#127874;</label>
-            <button name="bdayoption" id="bdayoption" onclick="chngMode('bday')">Enter my birthday instead</button>
-            <button name="signoption" id="signoption" onclick="chngMode('sign')">Enter my sign instead</button>
+            <button name="bdayoption" id="bdayoption" onclick="switchInputMode('bday')">Enter my birthday instead</button>
+            <button name="signoption" id="signoption" onclick="switchInputMode('sign')">Enter my sign instead</button>
         </div>
 
         <!-- Input submission button -->
-        <div id="get" onclick="data()">Submit</div>
+        <div id="get" onclick="getData()">Submit</div>
 
         <!-- data display columns -->
         <div class="column">

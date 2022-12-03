@@ -1,8 +1,9 @@
 var sign;
 var url = "http://localhost:8080/"; //server URL
+var datalog; // stores last data returned form server for testing purposes via mocha
 
-/* parses user input for sign, queries server for data */
-function data() {
+/* parses user input for their sign, queries the server for corresponding set of data*/
+function getData() {
     if(document.getElementById("yoursign").style.display != "none") { // if in sign input mode
         sign = document.getElementById("sign").value.toLowerCase();
         if(sign == "select"){
@@ -23,23 +24,48 @@ function data() {
             return;
         }
 
-        /* Below block of code translates birth day and month into zodiac sign */
-        if((month == 2 && day >= 21) || (month == 3 && day <= 19)) sign = "aries";
-        if((month == 3 && day >= 20) || (month == 4 && day <= 20)) sign = "taurus";
-        if((month == 4 && day >= 21) || (month == 5 && day <= 21)) sign = "gemini";
-        if((month == 5 && day >= 22) || (month == 6 && day <= 22)) sign = "cancer";
-        if((month == 6 && day >= 23) || (month == 7 && day <= 22)) sign = "leo";
-        if((month == 7 && day >= 23) || (month == 8 && day <= 22)) sign = "virgo";
-        if((month == 8 && day >= 23) || (month == 9 && day <= 23)) sign = "libra";
-        if((month == 9 && day >= 24) || (month == 10 && day <= 21)) sign = "scorpio";
-        if((month == 10 && day >= 22) || (month == 11 && day <= 21)) sign = "sagittarius";
-        if((month == 11 && day >= 22) || (month == 0 && day <= 19)) sign = "capricorn";
-        if((month == 0 && day >= 20) || (month == 1 && day <= 18)) sign = "aquarius";
-        if((month == 1 && day >= 19) || (month == 2 && day <= 20)) sign = "pisces";
+        sign = bdayToSign(month, day);
     }
     
     console.log(sign);
 
+    exitInputMode();
+
+    /* Sends a GET request to the server including a query string with sign data
+        (as demonstrated in Lab 8)*/
+    $.get(url + '?sign=' + sign, response);  
+
+    return datalog;
+}
+
+/* handles and displays server response data */
+function response(data, status){
+    document.getElementById("mydata").innerHTML = data;
+    datalog = data; // for testing purposes
+}
+
+/* Translates birth day and month into zodiac sign */
+function bdayToSign(month, day) {
+    var result;
+
+    if((month == 2 && day >= 21) || (month == 3 && day <= 19)) result = "aries";
+    if((month == 3 && day >= 20) || (month == 4 && day <= 20)) result = "taurus";
+    if((month == 4 && day >= 21) || (month == 5 && day <= 21)) result = "gemini";
+    if((month == 5 && day >= 22) || (month == 6 && day <= 22)) result = "cancer";
+    if((month == 6 && day >= 23) || (month == 7 && day <= 22)) result = "leo";
+    if((month == 7 && day >= 23) || (month == 8 && day <= 22)) result = "virgo";
+    if((month == 8 && day >= 23) || (month == 9 && day <= 23)) result = "libra";
+    if((month == 9 && day >= 24) || (month == 10 && day <= 21)) result = "scorpio";
+    if((month == 10 && day >= 22) || (month == 11 && day <= 21)) result = "sagittarius";
+    if((month == 11 && day >= 22) || (month == 0 && day <= 19)) result = "capricorn";
+    if((month == 0 && day >= 20) || (month == 1 && day <= 18)) result = "aquarius";
+    if((month == 1 && day >= 19) || (month == 2 && day <= 20)) result = "pisces";
+
+    return result;
+}
+
+/*dynamically exits input mode, transitions to data display interface*/
+function exitInputMode() {
     /* removes input interface buttons, displays data columns */
     document.getElementById("yoursign").style.display = "none";
     document.getElementById("yourbday").style.display = "none";
@@ -51,19 +77,8 @@ function data() {
         columns[i].style.backgroundColor = "rgb(247, 232, 248)";
     }
 
-    /* Sends a GET request to the server including a query string with sign data
-        (as demonstrated in Lab 8)*/
-    $.get(url + '?sign=' + sign, response);
-
     /* displays interface button for retrieving daily horoscope via API */
     document.getElementById("getapi").style.display = "inline";   
-    return sign;
-}
-
-/* handles server response data */
-function response(data, status){
-    document.getElementById("mydata").innerHTML = data;
-    return data;
 }
 
 /* Queries the Aztro API for daily horoscope data */
@@ -78,7 +93,6 @@ function api() {
         delete results["date_range"];
         document.getElementById("apidata").innerHTML = "" + "<br>";
         for(i in results) {
-         
             fixedi = i.replaceAll("_", " ");
             document.getElementById("apidata").innerHTML += "<b>" + fixedi + ":</b>  <i>" + results[i] + "</i><br><br>";
         }   
@@ -87,21 +101,19 @@ function api() {
 }
 
 /* JavaScript code for dynamically switching user input mode */
-function chngMode(mode) {
+function switchInputMode(mode) {
     if(mode == 'bday') {
         document.getElementById("bdayoption").style.display = "none";
         document.getElementById("signoption").style.display = "inline";
         document.getElementById("chnglabel").innerHTML = "Recalled your sign? &#9803;";
         document.getElementById("yoursign").style.display = "none";
         document.getElementById("yourbday").style.display = "block";
-        return "mode is bday"
     } else if(mode == 'sign') {
         document.getElementById("signoption").style.display = "none";
         document.getElementById("bdayoption").style.display = "inline";
         document.getElementById("chnglabel").innerHTML = "Don't know your sign? &#127874;";
         document.getElementById("yoursign").style.display = "block";
         document.getElementById("yourbday").style.display = "none";
-        return "mode is sign"
     }
 }
 /* code for testing that the testrunner is working appropriately*/
