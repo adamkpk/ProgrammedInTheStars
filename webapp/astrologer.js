@@ -1,6 +1,5 @@
 var sign;
 var url = "http://localhost:8080/"; //server URL
-var datalog; // stores last data returned form server for testing purposes via mocha
 
 /* parses user input for their sign, queries the server for corresponding set of data*/
 function getData() {
@@ -41,7 +40,6 @@ function getData() {
 /* handles and displays server response data */
 function response(data, status){
     document.getElementById("mydata").innerHTML = data;
-    datalog = data; // for testing purposes
 }
 
 /* Translates birth day and month into zodiac sign */
